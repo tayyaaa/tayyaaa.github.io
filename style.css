@@ -1,0 +1,64 @@
+/* yes_style.css */
+
+body {
+    display: flex;
+    flex-direction: column; /* Mengatur konten vertikal */
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(189, 225, 122);
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    /* Konten Teks dan GIF tetap di tengah */
+    text-align: center;
+    padding: 20px;
+    z-index: 10; /* Pastikan konten utama di atas tombol yang bergerak */
+}
+
+/* ... (header_text dan gif_container tetap sama) ... */
+
+/* Gaya untuk Container Tombol Baru */
+.tombol-container {
+    /* Ini hanya untuk memberi jarak dan menahan posisi YES agar tetap di tengah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px; 
+    /* PENTING: Atur agar kontainer ini menjadi referensi awal tombol Yes */
+    position: relative; 
+}
+
+#yesButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    /* Atur margin agar tombol No bisa diletakkan di sebelahnya */
+    margin-right: 20px; 
+}
+
+#noButton {
+    /* WAJIB: Membuat tombol bisa digerakkan dengan JavaScript */
+    position: absolute; 
+    
+    /* PENTING: Atur posisi awal agar tombol NO muncul di sebelah kanan YES */
+    /* Nilai ini mungkin perlu disesuaikan, ini perkiraan awal */
+    left: 55%; 
+    top: 50%; /* Sesuaikan secara vertikal di tengah container */
+    transform: translateY(-50%); 
+    
+    transition: all 0.2s ease-out; 
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
